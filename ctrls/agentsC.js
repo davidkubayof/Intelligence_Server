@@ -34,6 +34,40 @@ export const createAgent = async (req , res) => {
             saveDataInFile('./data/agents.json', agents)
             res.send("User created: ")
         } else {       
-            res.status(401).json('user is alrdy exsist: ')
+            res.status(401).json('user is alrdy exists: ')
         } 
+}
+export const updateAgent = async(req,res)=>{
+    try {
+        const agents = await readFileByPath('./data/agents.json')
+        const index = agents.findIndex(agent => agent.id === req.params.id)
+        
+        if(index !== -1){
+            agents[index].id = req.body.id
+            saveDataInFile('./data/agents.json', agents)
+            res.send("end")
+        } else {res.send("not faund: ")}
+        
+    } catch (error) {
+        res.status()
+    }
+}
+export const deleteAgent = async(req,res)=>{
+    try {
+        const agents = await readFileByPath('./data/agents.json')
+        const obj = agents.find(agent => agent.id === req.params.id)
+                
+        if(obj){
+            const updatedAgents = agents.filter(agent => agent.id !== req.params.id);
+            console.log(updatedAgents);
+            
+            saveDataInFile('./data/agents.json', updatedAgents)
+            res.send("delet agent:")
+        } else {
+            res.send("agent not exsist")
+        }
+        
+    } catch (error) {
+        res.status(404)
+    }
 }

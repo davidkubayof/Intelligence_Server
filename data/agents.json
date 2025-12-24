@@ -1,26 +1,14 @@
 [
   {
-    "id": "2222",
+    "id": "1",
     "name": "david",
-    "nickname": "dav",
+    "nickname": "aaa",
     "reportsCount": 0
   },
   {
-    "id": "3333",
-    "name": "avi",
-    "nickname": "av",
-    "reportsCount": 0
-  },
-  {
-    "id": "1111",
-    "name": "aaaaa",
-    "nickname": "a",
-    "reportsCount": 0
-  },
-  {
-    "id": "4444",
-    "name": "aaaaa",
-    "nickname": "a",
+    "id": "2",
+    "name": "david",
+    "nickname": "aaa",
     "reportsCount": 0
   }
 ]
